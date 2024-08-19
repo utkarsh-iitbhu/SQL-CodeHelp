@@ -15,11 +15,11 @@ st.title("🦜 LangChain: Chat with SQL DB")
 LOCALDB="USE_LOCALDB"
 MYSQL="USE_MYSQL"
 
-radio_opt=["Use SQLLite 3 Database- Student.db","Connect to you MySQL Database"]
-
+# radio_opt=["Use SQLLite 3 Database- Student.db","Connect to you MySQL Database"]
+radio_opt=["Connect to you MySQL Database"]
 selected_opt=st.sidebar.radio(label="Choose the DB which you want to chat",options=radio_opt)
 
-if radio_opt.index(selected_opt)==1:
+if radio_opt.index(selected_opt)==0:
     db_uri=MYSQL
     mysql_host=st.sidebar.text_input("Provide MySQL Host")
     mysql_user=st.sidebar.text_input("MYSQL User")

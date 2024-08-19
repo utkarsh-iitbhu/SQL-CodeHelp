@@ -4,4 +4,3 @@ python-dotenv
 langchain-groq
 mysql-connector-python
 SQLAlchemy
-sqlite3
