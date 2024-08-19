@@ -50,7 +50,8 @@ def configure_db(db_uri,mysql_host=None,mysql_user=None,mysql_password=None,mysq
         if not (mysql_host and mysql_user and mysql_password and mysql_db):
             st.error("Please provide all MySQL connection details.")
             st.stop()
-        return SQLDatabase(create_engine(f"mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}/{mysql_db}"))   
+        return SQLDatabase(create_engine(f"mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}/{mysql_db}",
+                                         echo=True))   
     
 if db_uri==MYSQL:
     db=configure_db(db_uri,mysql_host,mysql_user,mysql_password,mysql_db)
